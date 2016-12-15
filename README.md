@@ -1,0 +1,52 @@
+# incremental_dom
+
+Use [Incremental DOM](https://github.com/google/incremental-dom) in Dart
+
+## Usage
+
+A simple usage example:
+
+```dart
+import 'dart:html';
+import 'package:incremental_dom/incremental_dom.dart';
+
+main() {
+  final d1 = new Data('data 1', true);
+  final d2 = new Data('data 2', true);
+
+  final parent = document.getElementById('output');
+
+  patch(parent, (data) {
+    render(data);
+  }, d1);
+
+  // or
+  patch(parent, render, d1);
+
+  // Alternatively
+  patch(parent, (_) {
+    render(d2);
+  });
+}
+
+render(Data data) {
+  elementVoid('input', '', ['type', 'text']);
+
+  elementOpen('div', '', null);
+  if (data.isDone) {
+    text(data.text);
+  }
+  elementClose('div');
+}
+
+class Data {
+  String text = 'default text';
+  bool isDone = false;
+
+  Data([this.text, this.isDone]);
+}
+```
+
+## Bugs, Fixes, Enhancements
+
+All feedback, PRs and bug reports are welcome.
