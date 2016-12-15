@@ -2,7 +2,7 @@
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'dart:html';
-import 'package:incremental_dom/incremental_dom.dart';
+import 'package:incremental_dom_facade/incremental_dom_facade.dart';
 
 main() {
   final d1 = new Data('data 1', true);

@@ -1,4 +1,4 @@
-name: incremental_dom
+name: incremental_dom_facade
 description: Dart library for Incremental DOM
 version: 0.0.1
 author: Kulshekhar Kabra <kulshekhar+dart@gmail.com>
