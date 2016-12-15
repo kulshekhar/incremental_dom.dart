@@ -5,4 +5,4 @@
 ///
 library incremental_dom;
 
-export 'src/incremental_dom_base.dart';
+export 'src/incremental_dom_facade_base.dart';
