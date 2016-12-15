@@ -1,4 +1,4 @@
-# incremental_dom
+# incremental_dom_facade
 
 Use [Incremental DOM](https://github.com/google/incremental-dom) in Dart
 
