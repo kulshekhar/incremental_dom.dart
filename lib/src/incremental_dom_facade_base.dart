@@ -82,3 +82,8 @@ void patch(Node node, PatchFunction f, [data]) {
   context[_idom].callMethod('patch', [node, f, data ?? {}]);
   // context[_idom].callMethod('patch', [node, f, new JsObject.jsify(data ?? {})]);
 }
+
+final attributes = context[_idom]['attributes'];
+
+final applyAttr = context[_idom]['applyAttr'];
+final applyProp = context[_idom]['applyProp'];
