@@ -16,12 +16,16 @@ typedef PatchFunction(dynamic data);
 Element elementOpen(String tagName,
     [String key, List staticPropertyValuePairs, Map propertyValuePairs]) {
   //
-  return context[_idom].callMethod('elementOpen', [
+  final params = [
     tagName,
     key,
     staticPropertyValuePairs,
-    propertyValuePairs,
-  ]);
+  ];
+  propertyValuePairs.forEach((k, v) {
+    params.addAll([k, v]);
+  });
+
+  return context[_idom].callMethod('elementOpen', params);
 }
 
 /// Used with [attr] and [elementOpenEnd] to declare an element.
@@ -59,12 +63,16 @@ Element elementClose(String tagName) =>
 Element elementVoid(String tagName,
     [String key, List staticPropertyValuePairs, Map propertyValuePairs]) {
   //
-  return context[_idom].callMethod('elementVoid', [
+  final params = [
     tagName,
     key,
     staticPropertyValuePairs,
-    propertyValuePairs,
-  ]);
+  ];
+  propertyValuePairs.forEach((k, v) {
+    params.addAll([k, v]);
+  });
+
+  return context[_idom].callMethod('elementVoid', params);
 }
 
 /// Declares a Text node, with the specified text, should appear at the current
